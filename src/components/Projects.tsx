@@ -13,10 +13,10 @@ export const Projects: React.FC = () => {
     : projectsData.filter((p) => p.category === selectedCategory);
 
   return (
-    <section id="projects" className="py-20 md:py-28 relative border-t border-slate-800/80 light:border-slate-200/80">
+    <section id="projects" className="py-16 md:py-24 relative border-t border-slate-800/80 light:border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 md:mb-12">
           <div className="max-w-2xl">
             <p className="text-xs font-mono font-semibold tracking-wider uppercase text-cyan-400 light:text-cyan-600 mb-2">
               03. Applied Engineering

@@ -39,10 +39,10 @@ export const Skills: React.FC = () => {
     : skillsData.filter((item) => item.category === selectedCategory);
 
   return (
-    <section id="skills" className="py-20 md:py-28 relative border-t border-slate-800/80 light:border-slate-200/80 bg-slate-950/40 light:bg-slate-50/50">
+    <section id="skills" className="py-16 md:py-24 relative border-t border-slate-800/80 light:border-slate-200/80 bg-slate-950/40 light:bg-slate-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 md:mb-12">
           <div className="max-w-2xl">
             <p className="text-xs font-mono font-semibold tracking-wider uppercase text-cyan-400 light:text-cyan-600 mb-2">
               02. Technical Competencies

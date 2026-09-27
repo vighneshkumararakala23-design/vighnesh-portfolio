@@ -49,12 +49,12 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-28 relative border-t border-slate-800/80 light:border-slate-200/80">
+    <section id="about" className="pt-24 pb-16 md:pt-28 md:pb-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-12 md:mb-16">
+        <div className="max-w-3xl mb-10 md:mb-12">
           <p className="text-xs font-mono font-semibold tracking-wider uppercase text-cyan-400 light:text-cyan-600 mb-2">
-            01. Background & Vision
+            01. Profile & Background
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white light:text-slate-900">
             About Me

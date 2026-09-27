@@ -101,12 +101,12 @@ export const CareerRoadmap: React.FC = () => {
   };
 
   return (
-    <section id="roadmap" className="py-20 md:py-28 relative border-t border-slate-800/80 light:border-slate-200/80">
+    <section id="roadmap" className="py-16 md:py-24 relative border-t border-slate-800/80 light:border-slate-200/80">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-14 sm:mb-16">
+        <div className="mb-12 sm:mb-14">
           <p className="text-xs font-mono font-semibold tracking-wider uppercase text-cyan-400 light:text-cyan-600 mb-2">
-            03. Career Roadmap
+            04. Career Roadmap
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white light:text-slate-900">
             My Career Roadmap

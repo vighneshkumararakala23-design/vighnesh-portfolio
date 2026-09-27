@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
           {/* Brand info */}
           <div className="text-center md:text-left space-y-1">
             <a
-              href="#home"
+              href="#about"
               className="text-base font-bold text-white light:text-slate-900 tracking-tight"
             >
               {personalProfile.name}

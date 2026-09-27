@@ -33,12 +33,12 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 relative border-t border-slate-800/80 light:border-slate-200/80">
+    <section id="contact" className="py-16 md:py-24 relative border-t border-slate-800/80 light:border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-12 md:mb-16">
+        <div className="max-w-3xl mb-10 md:mb-12">
           <p className="text-xs font-mono font-semibold tracking-wider uppercase text-cyan-400 light:text-cyan-600 mb-2">
-            08. Communication
+            05. Contact & Collaboration
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white light:text-slate-900">
             Let's Build Something Together.

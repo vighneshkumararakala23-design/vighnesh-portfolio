@@ -6,12 +6,9 @@
  * - Social links & contacts
  * - Skills & learning path
  * - Projects & demo links
- * - Work experience & internships
- * - Certifications & credentials
- * - Education history
+ * - Career roadmap
  */
 
-import heroAiImg from '../assets/images/hero_developer_ai_1790423441531.jpg';
 import projectAiNotesImg from '../assets/images/project_ai_notes_1790423457872.jpg';
 import projectStudentHubImg from '../assets/images/project_student_hub_1790423474918.jpg';
 import projectPortfolioImg from '../assets/images/project_dev_portfolio_1790423488712.jpg';
@@ -40,58 +37,10 @@ export interface SkillCategory {
   }[];
 }
 
-export interface Certification {
-  id: string;
-  title: string;
-  organization: string;
-  issueDate: string;
-  credentialId?: string;
-  verificationUrl: string;
-  description: string;
-  skills: string[];
-  category: string;
-}
-
-export interface ExperienceItem {
-  id: string;
-  role: string;
-  company: string;
-  period: string;
-  location: string;
-  type: string; // e.g. "Internship", "Academic", "Freelance"
-  description: string;
-  keyContributions: string[];
-  skills: string[];
-}
-
-export interface AchievementItem {
-  id: string;
-  title: string;
-  category: 'Hackathon' | 'Workshop' | 'Technical Event' | 'Academic' | 'Certification';
-  organization: string;
-  date: string;
-  description: string;
-}
-
-export interface EducationItem {
-  id: string;
-  institution: string;
-  degree: string;
-  period: string;
-  location: string;
-  score: string;
-  scoreType: string; // "CGPA" or "Percentage"
-  description: string;
-  coursework?: string[];
-  isCurrent?: boolean;
-}
-
 export const personalProfile = {
   name: "Vighnesh Kumar Arakala",
   shortName: "Vighnesh Kumar",
   title: "B.Tech CSE (AI & ML) Student | Aspiring AI/ML Engineer | Software Developer",
-  heroHeading: "Building Intelligent Solutions with AI & Code.",
-  heroSubheading: "I'm a B.Tech CSE (AI & ML) student passionate about Artificial Intelligence, Machine Learning, software development, and building practical technology solutions.",
   aboutBio: "I'm a Computer Science Engineering student specializing in Artificial Intelligence and Machine Learning at Marwadi University, Rajkot. I enjoy learning new technologies, solving programming problems, and turning ideas into practical projects. My current focus is strengthening my programming, data structures, AI/ML, and software development skills while continuously building real-world projects. I am actively seeking opportunities to learn, collaborate, and grow through internships, hackathons, and real-world projects.",
   location: "Rajkot, Gujarat, India",
   university: "Marwadi University",
@@ -120,12 +69,9 @@ export const personalProfile = {
     universityEmail: "vighneshkumar.arakala140195@marwadiuniversity.ac.in",
     personalEmail: "vighneshkumararakala23@gmail.com",
     linkedin: "https://www.linkedin.com/in/vighnesh-kumar-arakala-65235641a",
-    github: "https://github.com/vighnesh-arakala", // Placeholder: update with your GitHub profile URL
-    leetcode: "https://leetcode.com/u/vighnesh-arakala", // Placeholder: update with your LeetCode profile URL
-  },
-  resumePath: "/resume/Vighnesh_Kumar_Arakala_ATS_Resume.pdf",
-  resumeDownloadName: "Vighnesh_Kumar_Arakala_Resume.pdf",
-  heroVisual: heroAiImg,
+    github: "https://github.com/vighnesh-arakala",
+    leetcode: "https://leetcode.com/u/vighnesh-arakala",
+  }
 };
 
 export const skillsData: SkillCategory[] = [
@@ -189,8 +135,8 @@ export const projectsData: Project[] = [
     technologies: ["AI", "Python", "JavaScript", "Web Development", "REST APIs"],
     category: "AI & ML",
     featured: true,
-    githubUrl: "https://github.com/vighnesh-arakala/ai-notes-generator", // Update with your repository URL
-    liveDemoUrl: "https://ai-notes-generator-demo.vercel.app", // Update with your live demo URL
+    githubUrl: "https://github.com/vighnesh-arakala/ai-notes-generator",
+    liveDemoUrl: "https://ai-notes-generator-demo.vercel.app",
     highlights: [
       "Extracts key concepts automatically with structured formatting",
       "Interactive note editor with instant markdown preview",
@@ -206,8 +152,8 @@ export const projectsData: Project[] = [
     technologies: ["AI", "JavaScript", "HTML5", "CSS3", "Responsive UI"],
     category: "AI & ML",
     featured: true,
-    githubUrl: "https://github.com/vighnesh-arakala/ai-student-hub", // Update with your repository URL
-    liveDemoUrl: "https://ai-student-hub-demo.vercel.app", // Update with your live demo URL
+    githubUrl: "https://github.com/vighnesh-arakala/ai-student-hub",
+    liveDemoUrl: "https://ai-student-hub-demo.vercel.app",
     highlights: [
       "Modular dashboard with customizable academic widgets",
       "Instant concept clarifier tailored for engineering subjects",
@@ -217,213 +163,21 @@ export const projectsData: Project[] = [
   {
     id: "personal-portfolio",
     title: "Personal Developer Portfolio",
-    description: "A responsive personal portfolio website showcasing my skills, projects, certifications, and academic journey with a modern dark theme.",
-    longDescription: "Built with modern frontend architecture, featuring smooth interactive cards, fast performance, zero-pill aesthetic discipline, and full mobile responsiveness for internship and recruiter outreach.",
+    description: "A responsive personal portfolio website showcasing my skills, projects, and career roadmap with a modern dark theme.",
+    longDescription: "Built with modern frontend architecture, featuring smooth interactive cards, fast performance, clean aesthetic discipline, and full mobile responsiveness for internship and recruiter outreach.",
     image: projectPortfolioImg,
     technologies: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "React"],
     category: "Web Development",
     featured: true,
-    githubUrl: "https://github.com/vighnesh-arakala/portfolio", // Update with your repository URL
-    liveDemoUrl: "#home",
+    githubUrl: "https://github.com/vighnesh-arakala/portfolio",
+    liveDemoUrl: "#about",
     highlights: [
       "100% responsive across desktop, tablet, and mobile",
       "Modular data-driven architecture for rapid updates",
-      "Direct resume download and preview integration"
+      "Clean interactive career roadmap and project showcase"
     ]
   }
 ];
-
-export const experienceData: ExperienceItem[] = [
-  {
-    id: "exp-codealpha",
-    role: "Software & Web Development Intern",
-    company: "CodeAlpha",
-    period: "2025 - Present", // Update with your exact internship dates
-    location: "Remote",
-    type: "Internship",
-    description: "Worked on practical development tasks and gained hands-on experience while improving technical and professional skills.",
-    keyContributions: [
-      "Developed responsive frontend interfaces with modern web standards and clean layout structure.",
-      "Collaborated on code reviews, bug fixes, and feature iterations under experienced mentor guidance.",
-      "Strengthened practical programming, problem-solving, and version control discipline with Git."
-    ],
-    skills: ["Web Development", "Python", "JavaScript", "Git", "Problem Solving"]
-  }
-];
-
-export const achievementsData: AchievementItem[] = [
-  {
-    id: "ach-1",
-    title: "Technology Job Simulation",
-    category: "Technical Event",
-    organization: "Industry Partner / Simulation Platform",
-    date: "2025 - 2026",
-    description: "Completed real-world technical simulation challenges focusing on development fundamentals, task prioritization, and structured problem resolution."
-  },
-  {
-    id: "ach-2",
-    title: "Marwadi University AI & ML Technical Workshops",
-    category: "Workshop",
-    organization: "Marwadi University",
-    date: "2025 - 2026",
-    description: "Participated in hands-on departmental workshops on Machine Learning foundations, Python data manipulation, and software engineering practices."
-  },
-  {
-    id: "ach-3",
-    title: "Algorithmic Problem Solving & Code Challenges",
-    category: "Hackathon",
-    organization: "Campus Coding Community",
-    date: "2025 - 2026",
-    description: "Active participant in student coding meetups, building core proficiency in Data Structures and Algorithms with Python and C++."
-  }
-];
-
-export const certificationsData: Certification[] = [
-  {
-    id: "cert-deloitte",
-    title: "Deloitte — Technology Job Simulation",
-    organization: "Deloitte",
-    issueDate: "2025 - 2026",
-    credentialId: "DELOITTE-TECH-SIM",
-    verificationUrl: "https://www.linkedin.com/in/vighnesh-kumar-arakala-65235641a",
-    description: "Real-world engineering job simulation analyzing practical technology workflows, development deliverables, and software tasks.",
-    skills: ["Software Engineering", "Problem Solving", "Technology Workflows"],
-    category: "Job Simulation"
-  },
-  {
-    id: "cert-aws-academy",
-    title: "AWS Academy",
-    organization: "Amazon Web Services (AWS)",
-    issueDate: "2025 - 2026",
-    credentialId: "AWS-ACADEMY-CLOUD",
-    verificationUrl: "https://aws.amazon.com/verification",
-    description: "Fundamental cloud computing principles, compute infrastructure, virtualization, network security, and storage architecture.",
-    skills: ["Cloud Architecture", "AWS", "Infrastructure", "Security"],
-    category: "Cloud"
-  },
-  {
-    id: "cert-google-cloud",
-    title: "Google Cloud — Simplilearn SkillUp",
-    organization: "Google Cloud / Simplilearn",
-    issueDate: "2025 - 2026",
-    credentialId: "GCP-SKILLUP-2026",
-    verificationUrl: "https://www.linkedin.com/in/vighnesh-kumar-arakala-65235641a",
-    description: "Core cloud concepts, Google Cloud Platform infrastructure components, and cloud-native application deployments.",
-    skills: ["Google Cloud", "Cloud Computing", "Platform Architecture"],
-    category: "Cloud"
-  },
-  {
-    id: "cert-ai-spark",
-    title: "AI Spark '26 — Marwadi University",
-    organization: "Marwadi University",
-    issueDate: "2026",
-    credentialId: "MU-AISPARK-26",
-    verificationUrl: "https://www.linkedin.com/in/vighnesh-kumar-arakala-65235641a",
-    description: "Specialized departmental event and competitive technical track focused on practical AI models, algorithmic design, and machine learning.",
-    skills: ["Machine Learning", "AI Models", "Python", "Data Science"],
-    category: "AI & ML"
-  },
-  {
-    id: "cert-tata-forage",
-    title: "Tata — Forage Certificate",
-    organization: "Tata Group / Forage",
-    issueDate: "2025 - 2026",
-    credentialId: "TATA-FORAGE-DATA",
-    verificationUrl: "https://www.theforage.com/simulations",
-    description: "Virtual experience program demonstrating data analytics, business communication, and technical problem framing.",
-    skills: ["Data Analytics", "Visualization", "Business Insights"],
-    category: "Data Analytics"
-  },
-  {
-    id: "cert-gfg",
-    title: "GeeksforGeeks — Marwadi University",
-    organization: "GeeksforGeeks Student Chapter",
-    issueDate: "2025 - 2026",
-    credentialId: "GFG-MU-TECH",
-    verificationUrl: "https://www.linkedin.com/in/vighnesh-kumar-arakala-65235641a",
-    description: "Algorithmic problem solving, data structures, competitive programming sessions in C++ and Python.",
-    skills: ["Data Structures", "Algorithms", "C++", "Python"],
-    category: "Programming"
-  },
-  {
-    id: "cert-msft",
-    title: "Microsoft Student Ambassadors",
-    organization: "Microsoft",
-    issueDate: "2025 - 2026",
-    credentialId: "MSFT-AMBASSADOR",
-    verificationUrl: "https://studentambassadors.windows.com",
-    description: "Technical learning community initiatives, developer tooling, and modern software development practices.",
-    skills: ["Developer Tools", "Community", "Software Engineering"],
-    category: "Community"
-  },
-  {
-    id: "cert-croma",
-    title: "Croma Campus — Certificate of Participation",
-    organization: "Croma Campus",
-    issueDate: "2025",
-    credentialId: "CROMA-PARTICIPATION",
-    verificationUrl: "https://www.linkedin.com/in/vighnesh-kumar-arakala-65235641a",
-    description: "Technical training and interactive workshop participation in modern computing technologies and development methodologies.",
-    skills: ["Technical Training", "Computing Basics"],
-    category: "Workshop"
-  }
-];
-
-export const educationData: EducationItem[] = [
-  {
-    id: "edu-marwadi",
-    institution: "Marwadi University",
-    degree: "B.Tech in Computer Science Engineering (AI & ML)",
-    period: "July 2025 – May 2029",
-    location: "Rajkot, Gujarat, India",
-    score: "8.8",
-    scoreType: "CGPA",
-    description: "Specialized undergraduate engineering program focused on artificial intelligence algorithms, machine learning models, software design, and computer systems.",
-    coursework: [
-      "Data Structures & Algorithms",
-      "Object-Oriented Programming (C++)",
-      "Python for Data Science",
-      "Database Management Systems",
-      "Linear Algebra & Discrete Math"
-    ],
-    isCurrent: true
-  },
-  {
-    id: "edu-sr-college",
-    institution: "SR College",
-    degree: "Intermediate / Higher Secondary (MPC - Math, Physics, Chemistry)",
-    period: "June 2023 – March 2025",
-    location: "India",
-    score: "Completed",
-    scoreType: "Pre-University",
-    description: "Rigorous focus on advanced mathematics, calculus, mechanics, and physical sciences providing strong analytical and problem-solving foundations."
-  },
-  {
-    id: "edu-samithi-school",
-    institution: "Samithi English High School",
-    degree: "Secondary School Certificate (Class X)",
-    period: "June 2011 – April 2023",
-    location: "India",
-    score: "Completed",
-    scoreType: "School Board",
-    description: "Comprehensive foundational education with honors in science, mathematics, and extracurricular computational problem-solving."
-  }
-];
-
-export const devProfileStats = {
-  focusAreas: [
-    { title: "Core Languages", detail: "Python & C++", desc: "Algorithmic foundation and software engineering" },
-    { title: "Academic Standing", detail: "8.8 CGPA", desc: "Marwadi University CSE (AI & ML)" },
-    { title: "Target Graduation", detail: "Class of 2029", desc: "Actively seeking internships and hackathons" },
-    { title: "Core Specialization", detail: "AI & Machine Learning", desc: "Practical models, automation and data analytics" },
-  ],
-  githubDetails: {
-    username: "vighnesh-arakala",
-    profileUrl: "https://github.com/vighnesh-arakala",
-    primaryLanguages: ["Python", "C++", "JavaScript", "HTML/CSS"],
-    statusText: "Building practical projects & practicing daily algorithms"
-  }
-};
 
 export type SkillStatus = 'completed' | 'current' | 'next' | 'future' | 'long-term';
 
@@ -599,200 +353,3 @@ export const initialSkillRoadmap: SkillMilestone[] = [
     relatedProject: "Professional Software / AI Engineering Career"
   }
 ];
-
-export const skillConnectionTracks = [
-  {
-    title: "Software & Core Engineering Pipeline",
-    path: ["C/C++", "Programming Fundamentals", "Python", "DSA", "Software Development", "Machine Learning", "AI Engineering"]
-  },
-  {
-    title: "Data Science & Intelligent Systems Pipeline",
-    path: ["Python", "NumPy + Pandas", "Data Analysis", "Machine Learning", "Deep Learning", "Generative AI"]
-  }
-];
-
-export type MilestoneStatus = 'completed' | 'current' | 'upcoming' | 'future_goal';
-
-export interface RoadmapMilestone {
-  year: number;
-  stage: string;
-  status: MilestoneStatus;
-  statusLabel: string;
-  title: string;
-  period: string;
-  summary: string;
-  details: string[];
-  skills: string[];
-  projectsOrOutputs: string[];
-}
-
-export const careerRoadmap: RoadmapMilestone[] = [
-  {
-    year: 2025,
-    stage: "Foundation",
-    status: "completed",
-    statusLabel: "Completed",
-    title: "Started My CSE Journey",
-    period: "Year 1 (2025)",
-    summary: "Built fundamental core computer science concepts and commenced formal engineering education in AI & ML.",
-    details: [
-      "Started B.Tech CSE (AI & ML) at Marwadi University",
-      "Built foundations in programming and computer science principles",
-      "Started learning Python and C++ fundamentals",
-      "Achieved a strong academic standing with 8.8 CGPA"
-    ],
-    skills: ["Python Basics", "C++ Foundations", "Computer Science Principles", "Discrete Math"],
-    projectsOrOutputs: ["Foundational algorithmic scripts", "Academic coursework labs"]
-  },
-  {
-    year: 2026,
-    stage: "Skill Building",
-    status: "current",
-    statusLabel: "CURRENT",
-    title: "Building Strong Technical Skills",
-    period: "Year 2 (2026) — Active Focus",
-    summary: "Deepening algorithmic problem solving, core computer science subjects, machine learning exploration, and full-stack prototyping.",
-    details: [
-      "Strengthening Python and C++ with algorithmic discipline",
-      "Learning Data Structures & Algorithms systematically",
-      "Studying DBMS, relational SQL, and core CS subjects",
-      "Exploring applied AI and Machine Learning fundamentals",
-      "Building practical projects such as AI Notes Generator and AI Student Hub",
-      "Participating in technical learning opportunities and campus events",
-      "Completing industry-oriented certifications and job simulations (Deloitte, AWS, Tata)"
-    ],
-    skills: ["DSA (C++ & Python)", "Machine Learning Core", "SQL & DBMS", "Web Development", "Git & GitHub"],
-    projectsOrOutputs: ["AI Notes Generator", "AI Student Hub", "Personal Developer Portfolio"]
-  },
-  {
-    year: 2027,
-    stage: "AI/ML Development",
-    status: "upcoming",
-    statusLabel: "Upcoming",
-    title: "Deep Dive into AI & Machine Learning",
-    period: "Year 3 (2027) — Planned",
-    summary: "Advancing into deep learning architectures, generative AI concepts, model evaluation pipelines, and competitive hackathons.",
-    details: [
-      "Machine Learning fundamentals and statistical learning",
-      "Deep Learning and neural network architectures",
-      "Data Science workflows and feature engineering",
-      "Generative AI paradigms and prompt engineering architectures",
-      "Model development, hyperparameter tuning, and evaluation metrics",
-      "Build more advanced, end-to-end AI/ML applied projects",
-      "Participate in hackathons and technical competitions",
-      "Seek relevant summer internships in AI/ML and software engineering"
-    ],
-    skills: ["Deep Learning", "PyTorch / TensorFlow", "Generative AI", "Data Pipelines", "Model Evaluation"],
-    projectsOrOutputs: ["End-to-end ML prediction systems", "Competitive hackathon prototypes"]
-  },
-  {
-    year: 2028,
-    stage: "Industry Experience",
-    status: "upcoming",
-    statusLabel: "Upcoming",
-    title: "Internship & Real-World Experience",
-    period: "Year 4 (2028) — Planned",
-    summary: "Transitioning classroom knowledge into industry production systems, collaborative codebases, and rigorous interview mastery.",
-    details: [
-      "Secure an AI/ML or Software Engineering industry internship",
-      "Work on real-world development projects with production workflows",
-      "Improve advanced DSA and competitive problem-solving",
-      "Contribute to active GitHub and open-source projects",
-      "Build production-quality, maintainable software applications",
-      "Strengthen technical interview preparation and system design basics"
-    ],
-    skills: ["Production Software Engineering", "Advanced DSA", "System Design Basics", "CI/CD & Open Source"],
-    projectsOrOutputs: ["Production-grade full-stack & AI applications", "Open-source contributions"]
-  },
-  {
-    year: 2029,
-    stage: "Graduation & Career",
-    status: "future_goal",
-    statusLabel: "Future Goal",
-    title: "Ready for the Industry",
-    period: "Graduation Year (2029)",
-    summary: "Graduating with comprehensive engineering expertise, ready to launch a high-impact career as an AI/ML or Software Engineer.",
-    details: [
-      "Complete B.Tech in Computer Science Engineering (AI & ML)",
-      "Graduate in 2029 with verified academic and project excellence",
-      "Apply for AI/ML Engineer and Software Engineer roles across top tech teams",
-      "Continue building real-world AI solutions that solve practical problems",
-      "Begin professional software/AI engineering career"
-    ],
-    skills: ["Industry-Ready AI/ML Engineering", "High-Scale Software Development", "Domain Problem Solving"],
-    projectsOrOutputs: ["B.Tech Capstone Engineering Thesis", "Production AI deployments"]
-  }
-];
-
-export interface CurrentFocusItem {
-  id: string;
-  name: string;
-  category: string;
-  tagline: string;
-  description: string;
-}
-
-export const currentFocusItems: CurrentFocusItem[] = [
-  {
-    id: "focus-python",
-    name: "Python",
-    category: "Language",
-    tagline: "AI/ML & Prototyping",
-    description: "My primary language for machine learning algorithms, data processing, statistical modeling, and rapid backend application prototypes."
-  },
-  {
-    id: "focus-cpp",
-    name: "C++",
-    category: "Language",
-    tagline: "DSA & Speed",
-    description: "My core tool for Data Structures & Algorithms, high-performance problem solving, memory management, and computational efficiency."
-  },
-  {
-    id: "focus-dsa",
-    name: "DSA",
-    category: "Fundamentals",
-    tagline: "Algorithmic Rigor",
-    description: "Mastering arrays, linked lists, trees, graphs, dynamic programming, and complexity analysis to build scalable software."
-  },
-  {
-    id: "focus-dbms",
-    name: "DBMS",
-    category: "Core CS",
-    tagline: "Data Persistence",
-    description: "Studying relational database theory, schema normalization, indexing, transactions (ACID), and writing optimized SQL queries."
-  },
-  {
-    id: "focus-aiml",
-    name: "AI/ML",
-    category: "Specialization",
-    tagline: "Intelligent Systems",
-    description: "Exploring core algorithms from linear regression to decision trees, neural network principles, and quantitative model evaluation."
-  },
-  {
-    id: "focus-projects",
-    name: "Projects",
-    category: "Application",
-    tagline: "Applied Engineering",
-    description: "Translating theoretical concepts into tangible tools like the AI Notes Generator and AI Student Hub that solve real user needs."
-  },
-  {
-    id: "focus-github",
-    name: "GitHub",
-    category: "Tooling",
-    tagline: "Version Control",
-    description: "Practicing Git branch workflows, atomic commits, descriptive pull requests, and maintaining clean open repositories."
-  },
-  {
-    id: "focus-certs",
-    name: "Certifications",
-    category: "Validation",
-    tagline: "Industry Proof",
-    description: "Validating engineering skills through industry-modeled simulations (Deloitte, Tata) and cloud foundations (AWS Academy, GCP)."
-  }
-];
-
-export const futureCareerGoal = {
-  heading: "My 2029 Goal",
-  statement: "Become an industry-ready AI/ML and software engineering professional by combining strong computer science fundamentals, practical projects, problem-solving skills, and real-world experience."
-};
-
