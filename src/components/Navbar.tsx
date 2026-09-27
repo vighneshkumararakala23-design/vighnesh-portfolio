@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, Menu, X, ArrowUpRight, Volume2, VolumeX } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
-import { useSound } from '../context/SoundContext';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { personalProfile } from '../data/portfolioData';
 
 export const Navbar: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
-  const { soundEnabled, toggleSound } = useSound();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -22,79 +18,46 @@ export const Navbar: React.FC = () => {
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled
-          ? 'bg-slate-950/85 light:bg-white/85 backdrop-blur-md border-b border-slate-800/80 light:border-slate-200 shadow-sm'
+          ? 'bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80 shadow-sm'
           : 'bg-transparent border-b border-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-18">
-          {/* Brand Wordmark */}
+          {/* Left: Brand Wordmark / Logo */}
           <a
             href="#about"
-            className="group flex items-center gap-2 text-base md:text-lg font-bold tracking-tight text-white light:text-slate-900 transition-colors"
+            className="group flex items-center gap-2 text-base md:text-lg font-bold tracking-tight text-white flex-shrink-0 transition-colors"
           >
-            <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 light:bg-cyan-600 transition-transform group-hover:scale-125" />
+            <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 transition-transform group-hover:scale-125" />
             <span>{personalProfile.shortName}</span>
           </a>
 
-          {/* Navigation Links: About | Skills | Projects | Contact */}
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-slate-300 light:text-slate-600">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="hover:text-cyan-400 light:hover:text-cyan-600 transition-colors whitespace-nowrap"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
+          {/* Extreme Top-Right Navigation Group: [About] [Skills] [Projects] [Let's Connect] */}
+          <div className="flex items-center gap-4 sm:gap-6 lg:gap-7">
+            {/* Desktop Navigation Links */}
+            <nav className="hidden md:flex items-center gap-5 lg:gap-7 text-sm font-medium text-slate-300">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="hover:text-cyan-400 transition-colors whitespace-nowrap flex-shrink-0"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
 
-          {/* Actions & Let's Connect */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            {/* Sound Feedback Toggle Button */}
-            <button
-              onClick={toggleSound}
-              aria-label={soundEnabled ? "Mute interactive click sounds" : "Enable interactive click sounds"}
-              title={soundEnabled ? "Sound effects: ON (click to mute)" : "Sound effects: OFF (click to enable)"}
-              className={`p-2 rounded-lg transition-colors ${
-                soundEnabled
-                  ? 'text-cyan-400 light:text-cyan-600 hover:bg-slate-800/60 light:hover:bg-slate-100'
-                  : 'text-slate-500 light:text-slate-400 hover:text-slate-300 light:hover:text-slate-700 hover:bg-slate-800/60 light:hover:bg-slate-100'
-              }`}
-            >
-              {soundEnabled ? (
-                <Volume2 className="w-4 h-4" />
-              ) : (
-                <VolumeX className="w-4 h-4" />
-              )}
-            </button>
-
-            {/* Theme Toggle Button */}
-            <button
-              onClick={toggleTheme}
-              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-              title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-              className="p-2 rounded-lg text-slate-300 light:text-slate-600 hover:text-white light:hover:text-slate-900 hover:bg-slate-800/60 light:hover:bg-slate-100 transition-colors"
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-4 h-4 text-amber-300" />
-              ) : (
-                <Moon className="w-4 h-4 text-slate-700" />
-              )}
-            </button>
-
-            {/* Let's Connect CTA Button */}
+            {/* Desktop Final Button: Let's Connect */}
             <a
               href="#contact"
-              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-xs md:text-sm font-semibold text-white bg-slate-900 border border-cyan-500/40 hover:border-cyan-400 hover:bg-cyan-950/40 light:bg-slate-900 light:hover:bg-slate-800 light:text-white rounded-lg transition-all whitespace-nowrap shadow-sm"
+              className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 text-xs md:text-sm font-semibold text-white bg-slate-900 border border-cyan-500/40 hover:border-cyan-400 hover:bg-cyan-950/40 rounded-lg transition-all whitespace-nowrap shadow-sm flex-shrink-0"
             >
               <span>Let's Connect</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-cyan-400" />
@@ -104,7 +67,7 @@ export const Navbar: React.FC = () => {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle navigation menu"
-              className="md:hidden p-2 rounded-lg text-slate-300 light:text-slate-700 hover:bg-slate-800 light:hover:bg-slate-100 transition-colors"
+              className="md:hidden p-2 rounded-lg text-slate-300 hover:bg-slate-800 transition-colors flex-shrink-0"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -112,20 +75,20 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu (When collapsed on mobile/tablet screens) */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-slate-800 light:border-slate-200 bg-slate-950/95 light:bg-white/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-1 shadow-xl">
+        <div className="md:hidden border-b border-slate-800 bg-slate-950/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-1 shadow-xl">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded-md text-base font-medium text-slate-200 light:text-slate-800 hover:text-cyan-400 hover:bg-slate-900/60 light:hover:bg-slate-100 transition-colors"
+              className="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-cyan-400 hover:bg-slate-900/60 transition-colors"
             >
               {link.label}
             </a>
           ))}
-          <div className="pt-4 border-t border-slate-800/80 light:border-slate-200 flex flex-col gap-2">
+          <div className="pt-3 border-t border-slate-800/80">
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
